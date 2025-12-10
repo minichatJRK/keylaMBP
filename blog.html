@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Kayla Mie Bakso Pangsit</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">Kayla MBP</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="index.html#menu">Menu</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="blog-container">
+
+        <!-- Admin Panel (Simplified for demo, usually requires login) -->
+        <div class="admin-panel">
+            <h2>Tambah / Edit Postingan</h2>
+            <form id="blogForm">
+                <input type="hidden" id="postId">
+                <div class="form-group">
+                    <label for="title">Judul</label>
+                    <input type="text" id="title" required placeholder="Contoh: Promo Jumat Berkah">
+                </div>
+                <div class="form-group">
+                    <label for="imageInput">Upload Gambar (Maks 500KB)</label>
+                    <input type="file" id="imageInput" accept="image/*">
+                    <input type="hidden" id="imageData">
+                    <div id="imagePreview" style="margin-top: 10px; max-width: 200px; display: none;">
+                        <img src="" alt="Preview" style="width: 100%; border-radius: 5px;">
+                        <button type="button" id="removeImage"
+                            style="background: red; color: white; border: none; padding: 2px 5px; cursor: pointer; margin-top: 5px;">Hapus
+                            Gambar</button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="content">Isi Konten</label>
+                    <textarea id="content" rows="5" required placeholder="Tulis beritamu di sini..."></textarea>
+                </div>
+                <button type="submit" class="btn">Simpan Postingan</button>
+                <button type="button" id="cancelEdit" class="btn"
+                    style="background-color: #757575; display: none;">Batal</button>
+            </form>
+        </div>
+
+        <h2 style="margin-bottom: 2rem; color: var(--primary-color);">Artikel Terbaru</h2>
+        <div id="blogList">
+            <!-- Blog posts will be injected here -->
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Kayla Mie Bakso Pangsit. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
