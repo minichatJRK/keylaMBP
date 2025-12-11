@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- KONFIGURASI UNTUK PENGUNJUNG ---
-    const GLOBAL_BIN_ID = '69396c4343b1c97be9e46a9f';
+    const GLOBAL_BIN_ID = '693a1e6c43b1c97be9e5a4f5';
     // ------------------------------------
 
     // Cloud Settings Elements
