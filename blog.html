@@ -14,7 +14,7 @@
 
     <header>
         <nav>
-            <div class="logo">Kayla MBP</div>
+            <div class="logo">Kayla Mie Bakso Pangsit</div>
             <ul class="nav-links">
                 <li><a href="index.html">Beranda</a></li>
                 <li><a href="index.html#menu">Menu</a></li>
@@ -27,6 +27,27 @@
 
         <!-- Admin Panel (Simplified for demo, usually requires login) -->
         <div class="admin-panel">
+            <details style="margin-bottom: 2rem; border-bottom: 1px solid #eee; padding-bottom: 1rem;">
+                <summary style="cursor: pointer; color: var(--primary-color); font-weight: bold;">Pengaturan Cloud
+                    Database (Agar Online)</summary>
+                <div style="margin-top: 1rem; background: #f9f9f9; padding: 1rem; border-radius: 5px;">
+                    <p style="font-size: 0.9rem; margin-bottom: 1rem;">Masukkan API Key & Bin ID dari <a
+                            href="https://jsonbin.io" target="_blank">JSONBin.io</a> agar postingan bisa dilihat semua
+                        orang.</p>
+                    <div class="form-group">
+                        <label for="binId">Bin ID</label>
+                        <input type="text" id="binId" placeholder="Contoh: 6571..." style="font-family: monospace;">
+                    </div>
+                    <div class="form-group">
+                        <label for="apiKey">X-Master-Key (API Key)</label>
+                        <input type="password" id="apiKey" placeholder="Contoh: $2a$10$..."
+                            style="font-family: monospace;">
+                    </div>
+                    <button id="saveSettings" class="btn" style="background-color: #4caf50;">Simpan Koneksi</button>
+                    <span id="connectionStatus" style="margin-left: 10px; font-size: 0.9rem;"></span>
+                </div>
+            </details>
+
             <h2>Tambah / Edit Postingan</h2>
             <form id="blogForm">
                 <input type="hidden" id="postId">
@@ -47,7 +68,10 @@
                 </div>
                 <div class="form-group">
                     <label for="content">Isi Konten</label>
-                    <textarea id="content" rows="5" required placeholder="Tulis beritamu di sini..."></textarea>
+                    <div id="contentEditor" class="content-editor" contenteditable="true"
+                        data-placeholder="Tulis beritamu di sini (bisa paste gambar)..."></div>
+                    <textarea id="content" style="display:none;"></textarea>
+                    <!-- Hidden for fallback/easy value ref if needed, but we'll use innerHTML mostly -->
                 </div>
                 <button type="submit" class="btn">Simpan Postingan</button>
                 <button type="button" id="cancelEdit" class="btn"
